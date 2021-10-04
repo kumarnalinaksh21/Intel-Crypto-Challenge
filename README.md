@@ -34,7 +34,7 @@ $ crypto-sign-challenge 'Welcome to the Jungle'
 Storage
 -------
 
-This project will generate a new private key if it does not exist and will store
+This project will generate a new RSA private - public key pair if it does not exist and will store
 it in:
 
     $HOME/.local/share/signer
@@ -44,14 +44,7 @@ If the directory does not exist, it will try to create it. Incase the directory 
 Code Challenge Prompt
 ---------------------
 
-We want to see how you think, how you write code, and the effort you put into
-your work.
-
-The following is derived from one of our products, so we're not wasting your
-time solving a theoretical computer science problem, you're actually doing
-something directly relevant to what you'll be doing if you join our team.
-
-Using a language of your choice, provide an application that meets the following
+Using Python, provide an application that meets the following
 requirements:
 
   - Given a string input of up to 250 characters, return a JSON response
