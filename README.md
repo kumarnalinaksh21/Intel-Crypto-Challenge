@@ -186,5 +186,24 @@ Logs generated (crypto_sign_challenge.log) as follows:
 
 
 
-Installing
-----------
+Global Variables
+----------------
+
+1. Initialising empty message
+    ```python
+     message = "" 
+     ```
+2. Initialising empty count for number of characters in the message
+    - count = 0    
+3. Initialising key type to RSA, modify to TYPE_DSA for DSA
+    - Type_Key = crypto.TYPE_RSA
+4. Initialising bit size for keys
+    - bits = 2048
+5. Initialising empty private key
+    - private_key = "" 
+6. public_key = "" #initialising empty public key
+7. pkey = "" #initialising empty pkey object
+8. signature = "" #initialising empty MAC
+9. resultJSON = {} #initialising empty JSON response
+10. flag = False #set global flag as false
+11. numberOfArguments = len(sys.argv) #total arguments passed to the script

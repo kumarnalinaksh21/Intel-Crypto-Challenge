@@ -16,7 +16,7 @@ logger.setLevel(logging.DEBUG)
 message = "" #initialising empty message
 count = 0    #initialising empty count for number of characters in the message
 Type_Key = crypto.TYPE_RSA #initialising key type to RSA, modify to TYPE_DSA for DSA
-bits = 2048 #initialising 
+bits = 2048 #initialising bit size for keys
 private_key = "" #initialising empty private key
 public_key = "" #initialising empty public key
 pkey = "" #initialising empty pkey object
