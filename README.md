@@ -1,8 +1,7 @@
 Crypto Sign
 ===========
 
-Crypto Sign is my personal submission to the code challenge prompt found at the
-bottom of this document.
+Crypto Sign is Kumar Nalinaksh's personal submission to the code challenge prompt found below.
 
 Installing
 ----------
@@ -10,7 +9,7 @@ Installing
 This is intended to be used on Unix based file systems.
 However this script has been written in such a manner that it can be executed on Windows and Linux both.
 
-To install this tool you need to have Python3 installed.
+To run this script you need to have Python3 installed.
 
 
 Usage
@@ -88,18 +87,97 @@ JSON Schema for your application response:
 ```
 
 
-EXAMPLE
+Documentation
+=============
+
+SAMPLE EXECUTION
+---------------------
 
 ```
->./your-awesome-app "theAnswerIs42"
+>python crypto_sign_challenge.py Hello World!
 ```
 
-Returns:
+Output:
 
 ```json
 {
-    "message":"theAnswerIs42",
-    "signature":"MGUCMCDwlFyVdD620p0hRLtABoJTR7UNgwj8g2r0ipNbWPi4Us57YfxtSQJ3dAkHslyBbwIxAKorQmpWl9QdlBUtACcZm4kEXfL37lJ+gZ/hANcTyuiTgmwcEC0FvEXY35u2bKFwhA==",
-    "pubkey":"-----BEGIN PUBLIC KEY-----\nMHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEI5/0zKsIzou9hL3ZdjkvBeVZFKpDwxTb\nfiDVjHpJdu3+qOuaKYgsLLiO9TFfupMYHLa20IqgbJSIv/wjxANH68aewV1q2Wn6\nvLA3yg2mOTa/OHAZEiEf7bVEbnAov+6D\n-----END PUBLIC KEY-----\n"
+   "message": "Hello World! ",
+   "signature": "fQOnDSvDbHVOExLA/Ss9wfhVvFepNtQ59qkk9pl6ZEyixbY+6CblmAcaEblNTJcir6FEHzslph7z\nsGawOVh7/WPUF6gg3Inl+hASmlzIkCBDLAr1smbbahoVv9BMqMWiaapHS1A3/Mo45ddrx8DxIp4K\n7nOh4sa0wdjynB0teI5UnfEUFUwmdx+ENuRScc5tUhr9kUdk9+SOXn88T8M77W4sfG7UF7lVHwmT\nv5YbiDSLFq3khY9OzI/Pe2d8IP0DKBBfg6WrecWyKJVmhfUafq9OskRX/knVYhvkHntIzB81AdnS\nH3GpiddlPO8KHnq8059fCbEiPGVUIj9C2Bk5cQ==\n",
+   "pubkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv2OTb1wxV62Rmlzxz70e\nEzmAWcBdixjqivrczJo9FeJpQjcV97XWFi6lJKpYkBiAOT8sYiWxNFaoDd1l5utO\ntrVEV9z3ZP4OrOOnLQjmIB6oaAKCIwUD2jdKb+1dl35f3CzQMEQoxefSsygYHLnv\nDv/wB9YzG6WHiqiqJnMeDLbPd2azgeOUrxGDnNNDf3olJVOzp5sEqauHfFXAP3JL\nhCfD44ATRH1tySSvj3TziFOyjNfDD4/6RZfnloyozVco2zOG7uiEcsg8fVIy7vBm\n1fFxNWleTfvEsS8YpLJ31WkYyiMJAcIbZhrnvhIK/Kt2cAbDcKBOUcvSaTacIUAr\nfwIDAQAB\n-----END PUBLIC KEY-----\n"
 }
 ```
+
+```log
+2021-10-05 07:11:53,137 - root - Script has been invoked!
+2021-10-05 07:11:53,189 - root - Constructing the message from parsed arguments.
+2021-10-05 07:11:53,189 - root - The message is within acceptable parameters
+2021-10-05 07:11:53,226 - root - Default directory does not esist.
+2021-10-05 07:11:53,226 - root - Attempting to creating the directory
+2021-10-05 07:11:53,228 - root - Default directory could not be created due to access permission issue.
+2021-10-05 07:11:53,228 - root - Instead of default directory program will now use current working directory.
+2021-10-05 07:11:53,228 - root - Private and Public keys does not exist.
+2021-10-05 07:11:53,435 - root - Key pair has been generated
+2021-10-05 07:11:53,435 - root - Private key has been written to the PEM file.
+2021-10-05 07:11:53,437 - root - Private key has been configured in the form of pkey() object.
+2021-10-05 07:11:53,437 - root - Public key has been written to the PEM file.
+2021-10-05 07:11:53,438 - root - Public key has been loaded from the PEM file and decoded to Base64.
+2021-10-05 07:11:53,443 - root - Signature has been formed and decoded to Base64
+2021-10-05 07:11:53,443 - root - {'message': 'Hello World! ', 'signature': 'fQOnDSvDbHVOExLA/Ss9wfhVvFepNtQ59qkk9pl6ZEyixbY+6CblmAcaEblNTJcir6FEHzslph7z\nsGawOVh7/WPUF6gg3Inl+hASmlzIkCBDLAr1smbbahoVv9BMqMWiaapHS1A3/Mo45ddrx8DxIp4K\n7nOh4sa0wdjynB0teI5UnfEUFUwmdx+ENuRScc5tUhr9kUdk9+SOXn88T8M77W4sfG7UF7lVHwmT\nv5YbiDSLFq3khY9OzI/Pe2d8IP0DKBBfg6WrecWyKJVmhfUafq9OskRX/knVYhvkHntIzB81AdnS\nH3GpiddlPO8KHnq8059fCbEiPGVUIj9C2Bk5cQ==\n', 'pubkey': '-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv2OTb1wxV62Rmlzxz70e\nEzmAWcBdixjqivrczJo9FeJpQjcV97XWFi6lJKpYkBiAOT8sYiWxNFaoDd1l5utO\ntrVEV9z3ZP4OrOOnLQjmIB6oaAKCIwUD2jdKb+1dl35f3CzQMEQoxefSsygYHLnv\nDv/wB9YzG6WHiqiqJnMeDLbPd2azgeOUrxGDnNNDf3olJVOzp5sEqauHfFXAP3JL\nhCfD44ATRH1tySSvj3TziFOyjNfDD4/6RZfnloyozVco2zOG7uiEcsg8fVIy7vBm\n1fFxNWleTfvEsS8YpLJ31WkYyiMJAcIbZhrnvhIK/Kt2cAbDcKBOUcvSaTacIUAr\nfwIDAQAB\n-----END PUBLIC KEY-----\n'}
+2021-10-05 07:11:53,444 - root - JSON has been formed and decoded to Base64
+2021-10-05 07:11:53,444 - root - Script execution has completed successfully!
+```
+
+
+EXECUTING UNIT TESTING
+---------------------
+
+There are three test cases:
+1. Testing with 0 characters as message.
+2. Testing with message within character limitations of 1-250.
+3. Testing with message of more than 250 characters.
+
+```
+>python test.py
+```
+
+Output:
+
+```
+..{
+   "message": "Hello Zindagi",
+   "signature": "UOsiKZkmxG0b0/lSgsCaEIamiJBoFThnN1exNnuwX7n8cxVsHwInzKNOWLjb1XXh0GYY/za88uPR\nSUngZVeYmM7x5N092BdPZkj9+BXnm1idzDM92E9xk2KCGzHsyhPnsjeK4tq574GJgV22xm9+duY+\nKNuEbs6VdH2LikhDfJL1FYCOeOfRGbpBCo27f+A8ELPK7EWiJNvN3IJ2vO8mTHqdyvAlAKxK3krY\nITDnYJm+31kv+bClipJqEWWV1TEnpNgXiQ480XvKsMWFSwIrTrRKfx5eVJ5k+dw00yn74eLrDzRq\nxYp8VJDISwLfl72sQsLXrXKOryUIb6dUcTR7kw==\n",
+   "pubkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAryemBvEqu/738BPsJbDJ\nIzWLIWKvthlDadk7UZfBHisTW/SCrdBa9oMsXhg0WhCLOYE+s2lPvNJ1oTX3BeLp\nxs2f9VrscVBLiK7yO+remGn0ZSgdRtm1zTHIoQphYHEBhZjduWbvDMWpgF9dEfM1\nBXay2ENb9SDFMmGKr64kGeod/h6nxvBXGohEpyEmwyx4U049kPW9kSzcR/H6+Ys/\nkS8Y6aHLoh3fVYFOplibtOOCtcYxMmT9vuA2vr7cSO3i5KkeYJXOkllCK4IC5HVC\nZkhp7jdXL/Q5IMzdhwZNpjadEshO9/HsD7IvAnGc1M06QadEgHM5BTKHt9nPibDt\nEQIDAQAB\n-----END PUBLIC KEY-----\n"
+}
+.
+----------------------------------------------------------------------
+Ran 3 tests in 0.018s
+
+OK
+```
+
+```log
+2021-10-05 07:19:10,297 - root - Script has been invoked!
+2021-10-05 07:19:10,297 - root - Constructing the message from parsed arguments.
+2021-10-05 07:19:10,298 - root - The message must be more than 1 character and less than 250 characters.
+2021-10-05 07:19:10,298 - root - Script execution is unsuccessfull!
+2021-10-05 07:19:10,298 - root - The message must be more than 1 character and less than 250 characters.
+2021-10-05 07:19:10,298 - root - Script execution is unsuccessfull!
+2021-10-05 07:19:10,299 - root - Default directory does not esist.
+2021-10-05 07:19:10,299 - root - Attempting to creating the directory
+2021-10-05 07:19:10,301 - root - Default directory could not be created due to access permission issue.
+2021-10-05 07:19:10,301 - root - Instead of default directory program will now use current working directory.
+2021-10-05 07:19:10,301 - root - Private and Public keys does not exist.
+2021-10-05 07:19:10,416 - root - Key pair has been generated
+2021-10-05 07:19:10,416 - root - Private key has been written to the PEM file.
+2021-10-05 07:19:10,417 - root - Private key has been configured in the form of pkey() object.
+2021-10-05 07:19:10,417 - root - Public key has been written to the PEM file.
+2021-10-05 07:19:10,418 - root - Public key has been loaded from the PEM file and decoded to Base64.
+2021-10-05 07:19:10,420 - root - Signature has been formed and decoded to Base64
+2021-10-05 07:19:10,420 - root - {'message': 'Hello Zindagi', 'signature': 'UOsiKZkmxG0b0/lSgsCaEIamiJBoFThnN1exNnuwX7n8cxVsHwInzKNOWLjb1XXh0GYY/za88uPR\nSUngZVeYmM7x5N092BdPZkj9+BXnm1idzDM92E9xk2KCGzHsyhPnsjeK4tq574GJgV22xm9+duY+\nKNuEbs6VdH2LikhDfJL1FYCOeOfRGbpBCo27f+A8ELPK7EWiJNvN3IJ2vO8mTHqdyvAlAKxK3krY\nITDnYJm+31kv+bClipJqEWWV1TEnpNgXiQ480XvKsMWFSwIrTrRKfx5eVJ5k+dw00yn74eLrDzRq\nxYp8VJDISwLfl72sQsLXrXKOryUIb6dUcTR7kw==\n', 'pubkey': '-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAryemBvEqu/738BPsJbDJ\nIzWLIWKvthlDadk7UZfBHisTW/SCrdBa9oMsXhg0WhCLOYE+s2lPvNJ1oTX3BeLp\nxs2f9VrscVBLiK7yO+remGn0ZSgdRtm1zTHIoQphYHEBhZjduWbvDMWpgF9dEfM1\nBXay2ENb9SDFMmGKr64kGeod/h6nxvBXGohEpyEmwyx4U049kPW9kSzcR/H6+Ys/\nkS8Y6aHLoh3fVYFOplibtOOCtcYxMmT9vuA2vr7cSO3i5KkeYJXOkllCK4IC5HVC\nZkhp7jdXL/Q5IMzdhwZNpjadEshO9/HsD7IvAnGc1M06QadEgHM5BTKHt9nPibDt\nEQIDAQAB\n-----END PUBLIC KEY-----\n'}
+2021-10-05 07:19:10,427 - root - JSON has been formed and decoded to Base64
+```
+
+
+
+Installing
+----------
