@@ -36,7 +36,7 @@ def ConsolidateMessage():
 
 #---------------------- Funtion parses arguments, checks min and max character limits and forms message------------------------#
 def Check_Input(): 
-    global numberOfArguments, message, count, flag
+    global message, count, flag
 
     for i in message: #counting number of characters in the message
         count = count + 1

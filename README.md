@@ -141,6 +141,23 @@ Global Variables
     numberOfArguments = len(sys.argv)
     ```
 
+
+Functions
+---------
+
+1. ConsolidateMessage()
+    - It takes no arguments.
+    - Operates on global variables message, numberOfArguments.
+    - Consolidates the message into "message" global variable from sys.argv[].
+2. Check_Input()
+    - It takes no arguments.
+    - Operates on global variables message, count, flag.
+    - Counts number of characters in the message and then logs whether it is within acceptable parameter or not, also sets flag accordingly.
+3. 
+
+
+
+
 SAMPLE EXECUTION
 ---------------------
 
