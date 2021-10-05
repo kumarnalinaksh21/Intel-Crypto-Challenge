@@ -93,6 +93,54 @@ JSON Schema for your application response:
 Documentation
 =============
 
+Global Variables
+----------------
+
+1. Initialising empty message
+    ```python
+     message = "" 
+     ```
+2. Initialising empty count for number of characters in the message
+    ```python 
+    count = 0 
+    ```   
+3. Initialising key type to RSA, modify to TYPE_DSA for DSA
+    ```python 
+    Type_Key = crypto.TYPE_RSA
+    ```
+4. Initialising bit size for keys
+    ```python 
+    bits = 2048
+    ```
+5. Initialising empty private key
+    ```python 
+    private_key = ""
+    ``` 
+6. Initialising empty public key
+    ```python
+    public_key = "" 
+    ```
+7. Initialising empty pkey object
+    ```python
+    pkey = "" 
+    ```
+8. Initialising empty signature
+    ```python
+    signature = ""
+    ```
+9. Initialising empty JSON response
+    ```python
+    resultJSON = {}
+    ```
+10. set global flag as false
+    
+    flag = False
+    ```
+11. Total arguments passed to the script
+    ```python
+    numberOfArguments = len(sys.argv)
+    ```
+
 SAMPLE EXECUTION
 ---------------------
 
@@ -186,24 +234,3 @@ Logs generated (crypto_sign_challenge.log) as follows:
 
 
 
-Global Variables
-----------------
-
-1. Initialising empty message
-    ```python
-     message = "" 
-     ```
-2. Initialising empty count for number of characters in the message
-    - count = 0    
-3. Initialising key type to RSA, modify to TYPE_DSA for DSA
-    - Type_Key = crypto.TYPE_RSA
-4. Initialising bit size for keys
-    - bits = 2048
-5. Initialising empty private key
-    - private_key = "" 
-6. public_key = "" #initialising empty public key
-7. pkey = "" #initialising empty pkey object
-8. signature = "" #initialising empty MAC
-9. resultJSON = {} #initialising empty JSON response
-10. flag = False #set global flag as false
-11. numberOfArguments = len(sys.argv) #total arguments passed to the script
