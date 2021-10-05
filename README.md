@@ -93,6 +93,18 @@ JSON Schema for your application response:
 Documentation
 =============
 
+Libraries Used
+--------------
+
+1. sys
+2. os
+3. platform
+4. base64
+5. json
+6. logging
+7. OpenSSL
+8. unittest -> in test.py for unit testing.
+
 Global Variables
 ----------------
 
@@ -157,16 +169,18 @@ Functions
 
 3. Create_Key_Pair()
     - It takes no arguments.
-    -
-    -
+    - Operates on global variables Type_Key, bits, private_key, public_key and pkey.
+    - It generates Private and Public key pairs.
 
 4. Read_Key_Pair_From_PEM_File(PrivFilePath, PubFilepath)
     - It takes two arguments. 
     - PrivFilePath is full path for private key while PubFilepath is full path for public key.
+    - It reads Private and Public keys from their respective PEM files.
 
 5. Write_Key_Pair_To_PEM_File(PrivFilePath, PubFilepath)
     - It takes two arguments. 
     - PrivFilePath is full path for private key while PubFilepath is full path for public key.
+    - It writes Private and Public keys into their respective PEM files.
 
 6. Check_Operating_System_Type()
     - It takes no arguments.
