@@ -107,6 +107,8 @@ Output:
 }
 ```
 
+Logs generated (crypto_sign_challenge.log) as follows:
+
 ```log
 2021-10-05 07:11:53,137 - root - Script has been invoked!
 2021-10-05 07:11:53,189 - root - Constructing the message from parsed arguments.
@@ -154,6 +156,8 @@ Ran 3 tests in 0.018s
 
 OK
 ```
+
+Logs generated (crypto_sign_challenge.log) as follows:
 
 ```log
 2021-10-05 07:19:10,297 - root - Script has been invoked!
