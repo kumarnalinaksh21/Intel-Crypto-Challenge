@@ -133,7 +133,7 @@ Global Variables
     resultJSON = {}
     ```
 10. set global flag as false
-    
+    ```python
     flag = False
     ```
 11. Total arguments passed to the script
