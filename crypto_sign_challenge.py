@@ -27,7 +27,7 @@ numberOfArguments = len(sys.argv) #total arguments passed to the script
 
 
 #---------------------- Funtion generates message from Command Line arguments------------------------#
-def ConsolidateMessage():
+def Consolidate_Message():
     global message, numberOfArguments
     for i in range(1, numberOfArguments): #Forming message from the argument
         message = message + sys.argv[i] + " "
@@ -51,7 +51,7 @@ def Check_Input():
         logger.debug("The message is within acceptable parameters")
 
 #---------------------- Funtion generates Private and Public key pairs------------------------#        
-def CreateKeyPair():
+def Create_Key_Pair():
     global Type_Key, bits, private_key, public_key, pkey
     pkey = crypto.PKey()
     pkey.generate_key(Type_Key, bits) #generating key pair
@@ -60,7 +60,7 @@ def CreateKeyPair():
     logger.debug("Key pair has been generated")
 
 #---------------------- Funtion reads Private and Public keys from their respective PEM files------------------------#   
-def ReadKeyPairFromPEMFile(PrivFilePath, PubFilepath):
+def Read_Key_Pair_From_PEM_File(PrivFilePath, PubFilepath):
     global private_key, public_key
     with open(PrivFilePath, 'rb') as PrivFile:
         private_key = crypto.load_privatekey(crypto.FILETYPE_PEM, PrivFile.read(), None) #loading private key from PEM file in pkey() object form
@@ -70,7 +70,7 @@ def ReadKeyPairFromPEMFile(PrivFilePath, PubFilepath):
         logger.debug("Public key has been loaded from the PEM file and decoded to Base64.")
             
 #---------------------- Funtion writes Private and Public keys into their respective PEM files------------------------# 
-def WriteKeyPairToPEMFile(PrivFilePath, PubFilepath):
+def Write_Key_Pair_To_PEM_File(PrivFilePath, PubFilepath):
     global private_key, public_key
     with open(PrivFilePath, 'wb') as PrivFile:
         PrivFile.write(private_key) #writing private key to PEM file 
@@ -86,39 +86,39 @@ def WriteKeyPairToPEMFile(PrivFilePath, PubFilepath):
         logger.debug("Public key has been loaded from the PEM file and decoded to Base64.")
 
 #---------------------- Funtion checks the type of operating system on which script is being run------------------------#
-def CheckOperatingSystemType():
+def Check_Operating_System_Type():
     OS = platform.system()
     return OS
 
 #------- Funtion checks if directory exists, else tries to create it. If unsuccessful then uses current working directory and configure keys---------#
-def CheckIfdirectoryExistsAndThenConfigureKeys():
+def Check_If_directory_Exists_And_Then_Configure_Keys():
     global private_key, public_key
     path = os.path.expanduser("~") #initialise home directory
 
-    if CheckOperatingSystemType() == "Windows": #initialise full path for fetching and saving keys based on Operating System
+    if Check_Operating_System_Type() == "Windows": #initialise full path for fetching and saving keys based on Operating System
         subPath = "\.local\share\signer"
         finalPath = path + subPath #path for Windows default directory
-    elif CheckOperatingSystemType() == "Linux":
+    elif Check_Operating_System_Type() == "Linux":
         subPath = "/.local/share/signer"
         finalPath = path + subPath #path for Linux default directory
     
     if os.path.exists(finalPath): #Directory for keys exists 
          logger.debug("Default directory  exists.")
-         if CheckOperatingSystemType() == "Windows":
+         if Check_Operating_System_Type() == "Windows":
              PubFilepath = finalPath + "\PublicKey.pem" #initialise path for public key in Windows
              PrivFilePath = finalPath + "\PrivateKey.pem" #initialise path for private key in Windows
-         elif CheckOperatingSystemType() == "Linux":
+         elif Check_Operating_System_Type() == "Linux":
              PubFilepath = finalPath + "/PublicKey.pem" #initialise path for public key in Linux
              PrivFilePath = finalPath + "/PrivateKey.pem" #initialise path for private key in Linux
 
          if os.path.exists(PubFilepath) and os.path.exists(PrivFilePath): #check if both the keys exist
              logger.debug("Private and Public keys exist.")
-             ReadKeyPairFromPEMFile(PrivFilePath, PubFilepath) #read keys from PEM files and configuring them into variables
+             Read_Key_Pair_From_PEM_File(PrivFilePath, PubFilepath) #read keys from PEM files and configuring them into variables
 
          else: #if keys don't exist, create them
              logger.debug("Private and Public keys does not exist.")
-             CreateKeyPair() #generating Private and Public keys
-             WriteKeyPairToPEMFile(PrivFilePath, PubFilepath) #writing keys into PEM files and configuring them into variables
+             Create_Key_Pair() #generating Private and Public keys
+             Write_Key_Pair_To_PEM_File(PrivFilePath, PubFilepath) #writing keys into PEM files and configuring them into variables
 
     else: #Directory for keys does not exists 
          logger.debug("Default directory does not esist.")
@@ -129,30 +129,30 @@ def CheckIfdirectoryExistsAndThenConfigureKeys():
              pass #executing further script in case directory creation encounters an error
          if os.path.exists(finalPath) == True: #checking if directory has been created successfully
              logger.debug("Directory created successfully!")
-             CheckIfdirectoryExistsAndThenConfigureKeys() #recursion
+             Check_If_directory_Exists_And_Then_Configure_Keys() #recursion
          else: 
              logger.debug("Default directory could not be created due to access permission issue.")
              path = os.getcwd() #initialising current working directory as path
              logger.debug("Instead of default directory program will now use current working directory.")
-             if CheckOperatingSystemType() == "Windows":
+             if Check_Operating_System_Type() == "Windows":
                  PubFilepath = path + "\PublicKey.pem" #initialise path in current working directory for public key in Windows
                  PrivFilePath = path + "\PrivateKey.pem" #initialise path in current working directory for private key in Windows
-             elif CheckOperatingSystemType() == "Linux":
+             elif Check_Operating_System_Type() == "Linux":
                  PubFilepath = path + "/PublicKey.pem" #initialise path in current working directory for public key in Linux
                  PrivFilePath = path + "/PrivateKey.pem" #initialise path in current working directory for private key in Linux
 
              if os.path.exists(PubFilepath) and os.path.exists(PrivFilePath): #check if both the keys exist
                  logger.debug("Private and Public keys exist.")
-                 ReadKeyPairFromPEMFile(PrivFilePath, PubFilepath) #read keys from PEM files and configuring them into variables
+                 Read_Key_Pair_From_PEM_File(PrivFilePath, PubFilepath) #read keys from PEM files and configuring them into variables
 
              else: #if keys don't exist, create them
                  logger.debug("Private and Public keys does not exist.")
-                 CreateKeyPair() #generating Private and Public keys
-                 WriteKeyPairToPEMFile(PrivFilePath, PubFilepath) #writing keys into PEM files and configuring them into variables
+                 Create_Key_Pair() #generating Private and Public keys
+                 Write_Key_Pair_To_PEM_File(PrivFilePath, PubFilepath) #writing keys into PEM files and configuring them into variables
 
 
 #---- Funtion generates RFC 4648 compliant Base64 encoded cryptographic signature of the message, calculated using the private key and the SHA256 digest of the message----#
-def SigningTheMessage():
+def Signing_The_Message():
     global signature, private_key, message
     signature = crypto.sign(private_key, message.encode(), "sha256") #forming signature using private key and sha256 digest of message
     signature = base64.encodebytes(signature).decode() #Base64 encoding of the cryptographic signature of the message
@@ -160,7 +160,7 @@ def SigningTheMessage():
 
     
 #-------------Function generates JSON compliant to the schema defined in README----------------#
-def FormJSON():
+def Form_JSON():
     global  resultJSON, message, signature, public_key
     resultJSON = { "message": message, "signature":signature, "pubkey":public_key} #initialising dictionary complaint with JSON
     logger.debug(resultJSON)
@@ -172,12 +172,12 @@ def FormJSON():
 #-------------Main Function----------------#
 def Main(): 
     logger.debug("Script has been invoked!")
-    ConsolidateMessage() #generates message from Command Line arguments
+    Consolidate_Message() #generates message from Command Line arguments
     Check_Input() #checking input and consolidating message, if as per policy then program will proceed.
     if flag == True:
-        CheckIfdirectoryExistsAndThenConfigureKeys() #checking if directory exists, else we try to create it. If unsuccessful then we use current working directory and configure the keys
-        SigningTheMessage() #generating RFC 4648 compliant Base64 encoded cryptographic signature of the message, calculated using the private key and the SHA256 digest of the message
-        FormJSON() #generating JSON compliant to the schema defined in README
+        Check_If_directory_Exists_And_Then_Configure_Keys() #checking if directory exists, else we try to create it. If unsuccessful then we use current working directory and configure the keys
+        Signing_The_Message() #generating RFC 4648 compliant Base64 encoded cryptographic signature of the message, calculated using the private key and the SHA256 digest of the message
+        Form_JSON() #generating JSON compliant to the schema defined in README
         logger.debug("Script execution has completed successfully!")
 
 

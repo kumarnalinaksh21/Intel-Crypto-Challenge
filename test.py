@@ -19,9 +19,9 @@ class TestCryptoSignChallenge(unittest.TestCase):
     def test_withNormalArguments(self): #this test checks if messages within character limitations are processed or not
         argument = "Hello Zindagi"
         crypto_sign_challenge.message = argument
-        crypto_sign_challenge.CheckIfdirectoryExistsAndThenConfigureKeys()
-        crypto_sign_challenge.SigningTheMessage()
-        self.assertTrue(crypto_sign_challenge.FormJSON()) #checking if JSON is printed by the return boolean executed after it.
+        crypto_sign_challenge.Check_If_directory_Exists_And_Then_Configure_Keys()
+        crypto_sign_challenge.Signing_The_Message()
+        self.assertTrue(crypto_sign_challenge.Form_JSON()) #checking if JSON is printed by the return boolean executed after it.
 
 
 if __name__ == "__main__":

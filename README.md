@@ -145,15 +145,61 @@ Global Variables
 Functions
 ---------
 
-1. ConsolidateMessage()
+1. Consolidate_Message()
     - It takes no arguments.
     - Operates on global variables message, numberOfArguments.
     - Consolidates the message into "message" global variable from sys.argv[].
+
 2. Check_Input()
     - It takes no arguments.
     - Operates on global variables message, count, flag.
     - Counts number of characters in the message and then logs whether it is within acceptable parameter or not, also sets flag accordingly.
-3. 
+
+3. Create_Key_Pair()
+    - It takes no arguments.
+    -
+    -
+
+4. Read_Key_Pair_From_PEM_File(PrivFilePath, PubFilepath)
+    - It takes two arguments. 
+    - PrivFilePath is full path for private key while PubFilepath is full path for public key.
+
+5. Write_Key_Pair_To_PEM_File(PrivFilePath, PubFilepath)
+    - It takes two arguments. 
+    - PrivFilePath is full path for private key while PubFilepath is full path for public key.
+
+6. Check_Operating_System_Type()
+    - It takes no arguments.
+    - It checks the type of operating system, whether Windows or Linux and returns the same.
+
+7. Check_If_directory_Exists_And_Then_Configure_Keys()
+    - It takes no arguments.
+    - Operates on global variables private_key, public_key.
+    - It checks if directory exists, else tries to create it. If unsuccessful then uses current working directory and configure keys.
+
+8. Signing_The_Message()
+    - It takes no arguments.
+    - Operates on global variables signature, private_key and message.
+    - It generates RFC 4648 compliant Base64 encoded cryptographic signature of the message, calculated using the private key and the SHA256 digest of the message.
+
+9. Form_JSON()
+    - It takes no arguments.
+    - Operates on global variables resultJSON, message, signature and public_key.
+    - It generates JSON compliant to the schema defined above in README.
+
+10. Main()
+    - It takes no arguments.
+    - This is the main function.
+    - Order of execution in Main() function is as follows:
+        ```python
+        Consolidate_Message() #generates message from Command Line arguments
+        Check_Input() #checking input and consolidating message, if as per policy then program will proceed.
+        if flag == True:
+            Check_If_directory_Exists_And_Then_Configure_Keys() #checking if directory exists, else we try to create it. If unsuccessful then we use current working directory and configure the keys
+            Signing_The_Message() #generating RFC 4648 compliant Base64 encoded cryptographic signature of the message, calculated using the private key and the SHA256 digest of the message
+            Form_JSON() #generating JSON compliant to the schema defined in README   
+        ```
+
 
 
 

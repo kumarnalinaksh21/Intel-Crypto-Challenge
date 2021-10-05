@@ -1,0 +1,28 @@
+2021-10-05 08:20:48,470 - root - Script has been invoked!
+2021-10-05 08:20:48,471 - root - Constructing the message from parsed arguments.
+2021-10-05 08:20:48,471 - root - The message is within acceptable parameters
+2021-10-05 08:20:48,480 - root - Default directory  exists.
+2021-10-05 08:20:48,480 - root - Private and Public keys exist.
+2021-10-05 08:20:48,481 - root - Private key has been loaded from the PEM file.
+2021-10-05 08:20:48,481 - root - Public key has been loaded from the PEM file and decoded to Base64.
+2021-10-05 08:20:48,482 - root - Signature has been formed and decoded to Base64
+2021-10-05 08:20:48,483 - root - {'message': 'Hello World! ', 'signature': 'n32ZmuQ0Jh8e2f+FxQHOgsneEIQ9Sq3iYSGMLsn9n3+1uHgMwRfqAtOMjnmFrQnhNaZegI5sx5FA\nVjtpnWfOB0fvZibrAGE/u/7HE9GDS8Tb8Efe52OtORryK2cfv6vjfj7CC/lovhMVLeuN8Ge/gFGn\nLLrcabgsXlh6WfBpycU+kztcHCWDw8tQVezx76oX9tbDEEfzA/dIZZL41jjS35ReefeZdFWgoIAl\nfT+qcIE/Oofgkk78YFtN4M+zIPvebQSy2KgnfuLwaV+DVle+yjkGksYjGyduouRgZLfvdtgqibUM\natidQRSI+MmE+Rnv8gikb1b6wB93RUuJ4szpFA==\n', 'pubkey': '-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp1KdLp7AmwlNXCGwn+Hh\ngO7J5MUatH4dFd3hGHrJg/Oq2B0ahZUIj3WGbPLcot6xplqqlLt4QGhHsl4uN6JA\n/NyWhqGfQ3GpwNvSmJIasFGL61rvonTobeujzpYzFsfS/e1gns7kIghot1rxNe8N\nlGeDpjseq7/rrbW7gK/f+VZAss2gfdmAezdg+/w7XHO9V0YrFssQ5HEOGbfs+LZ2\nMyNNRyiYxLk2TdmKDDxgvX/w6Misq7/y350LW2Ku5/9wXPDCFn5fU3Z3ADpbFGo2\nO4r48fMGNDD4urvPwMy+LmiqIJkQFZeuhi9JdwFyVRVbn8+9TCDa2wljEz2ed73G\njQIDAQAB\n-----END PUBLIC KEY-----\n'}
+2021-10-05 08:20:48,483 - root - JSON has been formed and decoded to Base64
+2021-10-05 08:20:48,485 - root - Script execution has completed successfully!
+2021-10-05 08:23:19,762 - root - Script has been invoked!
+2021-10-05 08:23:19,762 - root - Constructing the message from parsed arguments.
+2021-10-05 08:23:19,762 - root - The message is within acceptable parameters
+2021-10-05 08:23:19,771 - root - Default directory does not esist.
+2021-10-05 08:23:19,771 - root - Attempting to creating the directory
+2021-10-05 08:23:19,772 - root - Default directory could not be created due to access permission issue.
+2021-10-05 08:23:19,772 - root - Instead of default directory program will now use current working directory.
+2021-10-05 08:23:19,772 - root - Private and Public keys does not exist.
+2021-10-05 08:23:19,973 - root - Key pair has been generated
+2021-10-05 08:23:19,973 - root - Private key has been written to the PEM file.
+2021-10-05 08:23:19,974 - root - Private key has been configured in the form of pkey() object.
+2021-10-05 08:23:19,974 - root - Public key has been written to the PEM file.
+2021-10-05 08:23:19,975 - root - Public key has been loaded from the PEM file and decoded to Base64.
+2021-10-05 08:23:19,977 - root - Signature has been formed and decoded to Base64
+2021-10-05 08:23:19,977 - root - {'message': 'Hello World! I have removed the .local folder. Lets try now! ', 'signature': 'P1WKfkDEyti+ZiIwYekWhfX6mrLomD2gaZoPq8JnUIL4poSP9xX/XRJ/iC3oj6Wbnwhsexng1NTF\nINe+ThCEuVrdGEaZ5hNl4VXmJqERYJu2Xr1ghI59Y5jCol40RPtmcW3L8PuxuJvMouTkB5KcWIG+\na9WnDPRvZdKXHuIBRxWUjImMlrTIg/U+OVOHTPT9lZ5TUVQxeBgU6UeCvRoaJzqpepfjQouf41mo\nIfgg/1WL1ULVLeYPgtqXI0tG/SHyMvKcj/snrlM2C2QbyQfhHDRChqTSxwRiS7850nn3vlUfm+O9\nvNe5Npgi7LRxTPfsBixsqrDSGaVnfGsEtwE9pQ==\n', 'pubkey': '-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxjzMb1ffV+oXx4c96Y2v\nEOX5ka4j4dO7kE3IcgL/1wPBeoMPJ/elG1gIlTc5/HjctUpdHzqUZ2WdPos6FIvc\nDHGGrjZmaj8uYm1y82tre9HdWWzK/yZMdb0SfygXgbz5VqgbmB02Lt+KSdsiDdQl\nGXL6NQBF8NjsNExZztVqDa8aLMhdD6xG+sGxbbwTviWcCM4mravgdKp979veCM4Q\nvzMo/ISjbUfy7gPBfKmNamh/V4nBmoXPrUTCFl/1kGrM7k5IHhce+OUyA7aYCIyD\n1mh3wb+mVmMXIClLQgXsCI4vXU/3uqZJWt9ezFdp65Pnk4sno63tREJ0zvoSqT3N\nfwIDAQAB\n-----END PUBLIC KEY-----\n'}
+2021-10-05 08:23:19,977 - root - JSON has been formed and decoded to Base64
+2021-10-05 08:23:19,977 - root - Script execution has completed successfully!
