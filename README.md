@@ -266,6 +266,9 @@ There are three test cases:
 2. Testing with message within character limitations of 1-250.
 3. Testing with message of more than 250 characters.
 
+Azure pipelines can execute these tests. 
+We can add a testing job in the YAML file of the pipeline.
+
 ```
 >python test.py
 ```
